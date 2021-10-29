@@ -1,13 +1,12 @@
-const baseApi = "vue3Bms"
+const baseApi = "/vue3Bms"
+const { object_in_array } = require("../../templates")
 module.exports = [
     {
-        path: "/vue3Bms/user",
-        dataFormat: {
-            // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
-            'list|1-10': [{
-                // 属性 id 是一个自增数，起始值为 1，每次增 1
-                'id|+1': 1
-            }]
-        }
+        path: `${baseApi}/user`,
+        format: object_in_array,
+    },
+    {
+        path: `${baseApi}/user2`,
+        format: object_in_array,
     }
 ]
