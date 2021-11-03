@@ -1,12 +1,15 @@
 const baseApi = "/vue3Bms"
-const { object_in_array } = require("../../templates")
 module.exports = [
     {
-        path: `${baseApi}/user`,
-        format: object_in_array,
-    },
-    {
-        path: `${baseApi}/user2`,
-        format: object_in_array,
+        path: `${baseApi}/login`,
+        format: {
+            "code": 200,
+            "msg": "登陆成功",
+            "data": {
+                "userId": "@word",
+                "token": "@guid"
+            }
+        },
+        type: 'post'
     }
 ]

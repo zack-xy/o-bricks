@@ -6,7 +6,7 @@ const chalk = require('chalk')
 const bodyParser = require('koa-bodyparser')
 app.use(cors({
   origin: "*",
-  allowMethods: ['GET', 'POST', 'DELETE'],
+  allowMethods: ['GET', 'POST', 'DELETE', 'PUT', 'PATCH'],
   allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
 }))
 app.use(bodyParser())
