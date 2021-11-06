@@ -8,5 +8,7 @@
 
 ### mockServer
 mock服务器
-
+启动：
+`node server/index.js`
+`pm2 start server/index.js`
 ---
