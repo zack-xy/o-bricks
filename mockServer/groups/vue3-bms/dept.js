@@ -25,6 +25,22 @@ module.exports = [
             userName: '@first',
             userEmail: '@email',
             '__v': 0,
+            "children|1-3": [
+              {
+                "parentId": [
+                  "60167059c9027b7d2c520a61",
+                  "6016728fc6a4417f2d27506e"
+                ],
+                "updateTime": "@datetime",
+                "createTime": "@datetime",
+                "_id": "@id",
+                "deptName": "@cword(5)",
+                "userId": "1000010",
+                "userName": "@first",
+                "userEmail": "@email",
+                "__v": 0
+              }
+            ]
           }
         ]
       }
