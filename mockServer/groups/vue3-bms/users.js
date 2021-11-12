@@ -41,7 +41,7 @@ module.exports = [
             'deptId|1-3': [
               '@id'
             ],
-            'userId': 10000002,
+            'userId|+1': 1000010,
             'userName': '@first',
             'userEmail': '@email',
             'createTime': '@datetime',
