@@ -29,7 +29,7 @@ module.exports = [
         page: {
           pageNum: 1,
           pageSize: 10,
-          'total| 10 - 50': 20
+          'total|10-50': 20
         },
         'list|1-10': [
           {
