@@ -11,7 +11,7 @@ module.exports = [
           ],
           "updateTime": "2021-01-31T08:53:37.418Z",
           "createTime": "2021-01-31T08:53:37.418Z",
-          "_id": "60167059c9027b7d2c520a61",
+          "_id": "10000",
           "deptName": "zz总司",
           "userId": "1000002",
           "userName": "admin",
@@ -20,11 +20,11 @@ module.exports = [
           "children": [
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-01-31T09:03:23.337Z",
               "createTime": "2021-01-31T09:03:23.337Z",
-              "_id": "6016728fc6a4417f2d27506e",
+              "_id": "100001",
               "deptName": "研发部门",
               "userId": "1000003",
               "userName": "jack",
@@ -33,12 +33,12 @@ module.exports = [
               "children": [
                 {
                   "parentId": [
-                    "60167059c9027b7d2c520a61",
-                    "6016728fc6a4417f2d27506e"
+                    "10000",
+                    "100001"
                   ],
                   "updateTime": "2021-02-01T13:05:06.188Z",
                   "createTime": "2021-01-31T09:19:09.081Z",
-                  "_id": "60167621531124822b79e124",
+                  "_id": "10000101",
                   "deptName": "JAVA小组-1",
                   "userId": "1000010",
                   "userName": "Tim",
@@ -49,11 +49,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-21T12:44:16.249Z",
               "createTime": "2021-01-31T09:03:23.337Z",
-              "_id": "60167345c6a4417f2d27506f",
+              "_id": "100002",
               "deptName": "前端部门",
               "userId": "1000004",
               "userName": "tom",
@@ -62,11 +62,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-01-31T09:03:23.337Z",
               "createTime": "2021-01-31T09:03:23.337Z",
-              "_id": "6016734ec6a4417f2d275070",
+              "_id": "100003",
               "deptName": "测试部门",
               "userId": "1000005",
               "userName": "Lucy",
@@ -75,11 +75,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-01-31T09:03:23.337Z",
               "createTime": "2021-01-31T09:03:23.337Z",
-              "_id": "6016735ac6a4417f2d275071",
+              "_id": "100004",
               "deptName": "UED部门",
               "userId": "1000006",
               "userName": "Jim",
@@ -88,11 +88,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-01-31T09:03:23.337Z",
               "createTime": "2021-01-31T09:03:23.337Z",
-              "_id": "60167375c6a4417f2d275072",
+              "_id": "100005",
               "deptName": "大数据部门",
               "userId": "1000007",
               "userName": "MaLi",
@@ -101,11 +101,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-01T14:06:49.922Z",
               "createTime": "2021-02-01T14:06:49.922Z",
-              "_id": "60180ce5b1eaed6c45fbebe5",
+              "_id": "100006",
               "deptName": "市场部门",
               "userId": "1000011",
               "userName": "Baidu",
@@ -114,11 +114,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-01T14:06:49.922Z",
               "createTime": "2021-02-01T14:06:49.922Z",
-              "_id": "6018119bb1eaed6c45fbebe6",
+              "_id": "100007",
               "deptName": "运营部门",
               "userId": "1000012",
               "userName": "TengXun",
@@ -127,11 +127,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-01T14:06:49.922Z",
               "createTime": "2021-02-01T14:06:49.922Z",
-              "_id": "601811dfb1eaed6c45fbebe7",
+              "_id": "100008",
               "deptName": "运维部门",
               "userId": "1000014",
               "userName": "Apple",
@@ -140,11 +140,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-18T16:29:35.671Z",
               "createTime": "2021-02-18T16:29:35.671Z",
-              "_id": "602f0e679aac702f1dc8b0f3",
+              "_id": "100009",
               "deptName": "人事部",
               "userId": "1000011",
               "userName": "Baidu",
@@ -153,11 +153,11 @@ module.exports = [
             },
             {
               "parentId": [
-                "60167059c9027b7d2c520a61"
+                "10000"
               ],
               "updateTime": "2021-02-18T16:29:35.671Z",
               "createTime": "2021-02-18T16:29:35.671Z",
-              "_id": "602f0e779aac702f1dc8b0f4",
+              "_id": "100010",
               "deptName": "财务部",
               "userId": "1000013",
               "userName": "Ali",
