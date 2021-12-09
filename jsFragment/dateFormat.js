@@ -40,7 +40,7 @@ const toTimestamp = (dateStr) => {
     if (dateStr.includes(":")) {
       return Date.parse(dateStr.replace(/\\/g, "-"))
     } else {
-      return Date.parse(dateStr.replace(/\-/g, "/"))
+      return Date.parse(dateStr.replace(/-/g, "/"))
     }
   } catch (error) {
     return new Date().getTime()
