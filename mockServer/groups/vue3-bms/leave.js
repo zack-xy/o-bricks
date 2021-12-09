@@ -663,4 +663,12 @@ module.exports = [
       msg: '创建/修改/删除成功'
     }
   },
+  {
+    path: `${baseApi}/leave/approve`,   // 申请休假
+    format: {
+      code: 200,
+      data: {},
+      msg: '处理成功'
+    }
+  },
 ]
