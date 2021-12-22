@@ -40,6 +40,29 @@ module.exports = {
           'ts-loader'
         ],
         exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader', // 相当于babeljs，转换浏览器兼容
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "postcss-preset-env",
+                    {
+                      browsers: "last 2 versions"
+                    }
+                  ]
+                ]
+              }
+            }
+          },
+          'less-loader'
+        ]
       }
     ]
   },
