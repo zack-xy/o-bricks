@@ -23,6 +23,7 @@ foo()
 
 // 3.
 // 输出：200、100、100
+// https://github.com/ZackZheng-xy/knownNet/tree/main/known/drawio/jsExecuteDemo3.drawio
 var n = 100
 
 function foo1 () {
