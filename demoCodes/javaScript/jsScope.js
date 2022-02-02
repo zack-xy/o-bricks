@@ -46,8 +46,19 @@ var a = 100
 function foo () {
   console.log(a);
   return
-  var a = 100
+  var a = 200
 }
 
 foo()
+
+// 5. 
+// 输出结果：a is not defined
+
+function foo () {
+  var a, b = 100
+}
+
+foo()
+console.log(a);
+console.log(b);
 
