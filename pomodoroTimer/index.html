@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 3em;
+    }
+
+    .btn {
+      width: 80px;
+      height: 40px;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .btn:active {
+      border-style: none;
+    }
+
+    #start {
+      background-color: lightseagreen;
+    }
+
+    #reset {
+      background-color: yellowgreen;
+    }
+
+    #input-minute {
+      height: 25px;
+    }
+
+    .radio {
+      margin-top: 20px;
+    }
+  </style>
+  <title></title>
+</head>
+
+<body>
+  <input type="text" id="input-minute">分钟
+  <h2><span id="minute-font">45</span>:<span id="second-font">00</span></h2>
+  <button class="btn" id="start">开始</button>
+  <button class="btn" id="reset">重置</button>
+  <div class="radio">
+    <audio controls="controls" preload="auto" playsinline="" webkit-playsinline="" loop="" id="audio"><br>
+      <source src="https://6url.cn/wApnVs" type="audio/mpeg"><br>
+    </audio>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>
