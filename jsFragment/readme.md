@@ -22,3 +22,7 @@
 ## [bind的实现](https://github.com/ZackZheng-xy/o-bricks/blob/main/jsFragment/bindRealize.js)
 
 ## [函数柯里化、偏函数、反柯里化](https://github.com/ZackZheng-xy/o-bricks/blob/main/jsFragment/currying.js)
+
+
+## settimeout链调用
+## [每隔3秒调用一次](https://github.com/ZackZheng-xy/o-bricks/blob/main/jsFragment/jsSettimeout.js)
