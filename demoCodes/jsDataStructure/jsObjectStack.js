@@ -1,4 +1,4 @@
-class Stack {
+export default class Stack {
   constructor() {
     this.count = 0  // 表示栈的大小
     this.items = {}  // key:count,value:值,key从0开始
