@@ -11,6 +11,10 @@
           :value="item.id">
         </el-option>
       </el-select>
+      <p>
+        <router-link to="/editableDivPage">受限编辑</router-link> | 
+        <router-link to="/betterRenderTable">20表格</router-link>
+      </p>
       <router-view></router-view>
   </div>
 </template>
