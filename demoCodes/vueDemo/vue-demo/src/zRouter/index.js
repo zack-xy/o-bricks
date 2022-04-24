@@ -10,7 +10,13 @@ const routes = [
   },
   {
     path: '/myHomePage',
-    component: () => import('@/views/myHomePage')
+    component: () => import('@/views/myHomePage'),
+    children: [
+      {
+        path: "/myHomePage/info",
+        component: { render (h) { return h('div', 'info页面') } }
+      }
+    ]
   },
   {
     path: '/betterRenderTable',

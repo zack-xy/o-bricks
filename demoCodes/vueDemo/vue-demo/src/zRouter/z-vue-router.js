@@ -6,14 +6,20 @@ class ZVueRouter {
     this.$options = options
 
     // 缓存path和route映射关系
-    this.routeMap = {}
-    this.$options.routes.forEach(route => {
-      this.routeMap[route.path] = route
-    })
+    // this.routeMap = {}
+    // this.$options.routes.forEach(route => {
+    //   this.routeMap[route.path] = route
+    // })
 
     // 响应式数据
-    const initial = window.location.hash.slice(1) || '/'
-    zVue.util.defineReactive(this, 'current', initial)
+    // const initial = window.location.hash.slice(1) || '/'
+    // zVue.util.defineReactive(this, 'current', initial)
+
+    //修改版本，为支持嵌套路由
+    this.current = window.location.hash.slice(1) || '/'
+    zVue.util.defineReactive(this, 'matched', [])
+    // match方法可以递归遍历路由表，获得匹配关系的数组
+
 
     // 监听事件
     window.addEventListener('hashchange', this.onHashChange.bind(this))
@@ -23,6 +29,28 @@ class ZVueRouter {
   onHashChange () {
     this.current = window.location.hash.slice(1)
     console.log(this.current);
+    this.macthed = []
+    this.match()
+  }
+
+  match (routes) {
+    routes = routes || this.$options.routes
+
+    // 递归遍历
+    for (const route of routes) {
+      if (route.path === '/' && this.current === '/') {
+        this.matched.push(route)
+        return
+      }
+
+      if (route.path !== '/' && this.current.indexOf(route.path) !== -1) {
+        this.matched.push(route)
+        if (route.children) {
+          this.match(route.children)
+        }
+        return
+      }
+    }
   }
 }
 
@@ -62,11 +90,34 @@ ZVueRouter.install = function (Vue) {
       return h('a', { attrs: { href: '#' + this.to } }, this.$slots.default)
     }
   })
+
   Vue.component('router-view', {
     render (h) {
+      // 标记当前router-view深度
+      this.$vnode.data.routerView = true
+      let depth = 0
+      let parent = this.$parent
+      while (parent) {
+        const vnodeData = parent.$vnode && parent.$vnode.data
+        if (vnodeData) {
+          // 说明当前parent是一个router-view
+          if (vnodeData.routerView) {
+            depth++
+          }
+        }
+
+        parent = parent.$parent
+      }
+
       // 1. 获取路由器实例
-      const { routeMap, current } = this.$router
-      const comp = routeMap[current] ? routeMap[current].component : null
+      // const { routeMap, current } = this.$router
+      // const comp = routeMap[current] ? routeMap[current].component : null
+
+      let comp = null
+      const route = this.$router.matched[depth]
+      if (route) {
+        comp = route.component
+      }
       return h(comp)
     }
   })
