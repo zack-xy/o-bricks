@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自实现Vue</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+  <script src="./zVue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{counter}}</p>
+    <p z-text="counter"></p>
+    <p z-html="desc"></p>
+  </div>
+  <script>
+    const app = new ZVue({
+      el: '#app',
+      data: {
+        counter: 1,
+        desc: "zvue<span style='color:red'>测试</span>"
+      },
+    })
+    setInterval(() => { app.counter++ }, 1000)
+  </script>
+</body>
+
+</html>
