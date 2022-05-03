@@ -12,9 +12,10 @@
 
 <body>
   <div id="app">
-    <p>{{counter}}</p>
+    <p @click="add">{{counter}}</p>
     <p z-text="counter"></p>
     <p z-html="desc"></p>
+    <input type="text" z-model="desc">
   </div>
   <script>
     const app = new ZVue({
@@ -23,8 +24,13 @@
         counter: 1,
         desc: "zvue<span style='color:red'>测试</span>"
       },
+      methods: {
+        add () {
+          this.counter++
+        }
+      }
     })
-    setInterval(() => { app.counter++ }, 1000)
+    // setInterval(() => { app.counter++ }, 1000)
   </script>
 </body>
 

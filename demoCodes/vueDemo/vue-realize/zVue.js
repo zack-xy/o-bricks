@@ -128,6 +128,16 @@ class Compile {
     return attrName.indexOf('z-') === 0
   }
 
+  // 判断是否是事件
+  isEvent (dir) {
+    return dir.indexOf('@') == 0
+  }
+
+  eventHandler (node, exp, dir) {
+    const fn = this.$vm.$options.methods && this.$vm.$options.methods[exp]
+    node.addEventListener(dir, fn.bind(this.$vm))
+  }
+
   // 编译节点
   compileElement (node) {
     //获取节点属性
@@ -142,6 +152,13 @@ class Compile {
         // 执行指令
         this[dir] && this[dir](node, exp)
       }
+      // 事件处理
+      if (this.isEvent(attrName)) {
+        // @click="onClick"
+        const dir = attrName.substring(1) // click
+        // 事件监听
+        this.eventHandler(node, exp, dir)
+      }
     })
   }
 
@@ -153,6 +170,16 @@ class Compile {
   //z-html指令
   html (node, exp) {
     this.update(node, exp, 'html')
+  }
+
+  // z-model
+  model (node, exp) {
+    this.update(node, exp, 'model')
+
+    // 事件监听
+    node.addEventListener('input', e => {
+      this.$vm[exp] = e.target.value
+    })
   }
 
   // 所有动态绑定都需要创建更新函数以及对应的watcher实例
@@ -172,6 +199,10 @@ class Compile {
 
   textUpdater (node, value) {
     node.textContent = value
+  }
+
+  modelUpdater (node, value) {
+    node.value = value
   }
 
 }
