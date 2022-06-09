@@ -4,7 +4,9 @@
     <tr v-for="(row, key) in rows" :key="key">
       <td :class="getCellStyle(cell)" v-for="(cell, key) in row" :key="key">
         <div>
-          <a class="cell">{{ t('el.datepicker.months.' + months[cell.text]) }}</a>
+          <a class="cell">
+            {{ t('el.datepicker.months.' + months[cell.text]) }}
+          </a>
         </div>
       </td>
     </tr>
@@ -36,6 +38,11 @@
     } else {
       return NaN;
     }
+  };
+
+  const removeFromArray = function(arr, pred) {
+    const idx = typeof pred === 'function' ? arrayFindIndex(arr, pred) : arr.indexOf(pred);
+    return idx >= 0 ? [...arr.slice(0, idx), ...arr.slice(idx + 1)] : arr;
   };
   export default {
     props: {
@@ -121,6 +128,10 @@
           if (cell.end) {
             style['end-date'] = true;
           }
+
+        }
+        if (cell.selected) {
+          style['selected'] = true
         }
         return style;
       },
@@ -205,6 +216,13 @@
             }
             this.rangeState.selecting = false;
           }
+        } else if (this.selectionMode === 'months') {
+          const months = Array.isArray(this.value) ? this.value : [];
+          const cell = this.rows[row][column]
+          const newMonths = cell.selected
+            ? removeFromArray(months, date => date.getTime() === newDate.getTime())
+            : [...months, newDate];
+          this.$emit('pick', newMonths);
         } else {
           this.$emit('pick', month);
         }
@@ -216,7 +234,7 @@
         // TODO: refactory rows / getCellClasses
         const rows = this.tableRows;
         const disabledDate = this.disabledDate;
-        const selectedDate = [];
+        const selectedDate = this.selectionMode === 'months' ? coerceTruthyValueToArray(this.value) : [];
         const now = getMonthTimestamp(new Date());
 
         for (let i = 0; i < 3; i++) {
@@ -252,3 +270,10 @@
     }
   };
 </script>
+<style>
+.el-month-table td.current:not(.disabled).selected .cell {
+    background-color: #409EFF;
+    color: #FFF !important;
+    border-radius: 15px;
+}
+</style>

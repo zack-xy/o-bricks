@@ -109,6 +109,7 @@
             </year-table>
             <month-table
               v-show="currentView === 'month'"
+              :selection-mode="selectionMode"
               @pick="handleMonthPick"
               :value="value"
               :default-value="defaultValue ? new Date(defaultValue) : null"
@@ -121,13 +122,13 @@
 
       <div
         class="el-picker-panel__footer"
-        v-show="footerVisible && currentView === 'date'">
+        v-show="(footerVisible && currentView === 'date') || (footerVisible && selectionMode === 'months')">
         <el-button
           size="mini"
           type="text"
           class="el-picker-panel__link-btn"
           @click="changeToNow"
-          v-show="selectionMode !== 'dates'">
+          v-show="selectionMode !== 'dates' && selectionMode!== 'months'">
           {{ t('el.datepicker.now') }}
         </el-button>
         <el-button
@@ -170,6 +171,7 @@
   import YearTable from '../basic/year-table';
   import MonthTable from '../basic/month-table';
   import DateTable from '../basic/date-table';
+import { debuglog } from 'util';
 
   export default {
     mixins: [Locale],
@@ -215,6 +217,8 @@
           }
         } else if (newVal === 'dates') {
           this.currentView = 'date';
+        } else if(newVal === 'months') {
+          this.currentView = 'month'
         }
       }
     },
@@ -328,6 +332,8 @@
         if (this.selectionMode === 'month') {
           this.date = modifyDate(this.date, this.year, month, 1);
           this.emit(this.date);
+        } else if(this.selectionMode === 'months')  {
+          this.emit(month, true);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, this.year, month);
           // TODO: should emit intermediate value ??
@@ -376,7 +382,7 @@
       },
 
       confirm() {
-        if (this.selectionMode === 'dates') {
+        if (this.selectionMode === 'dates' || this.selectionMode === 'months') {
           this.emit(this.value);
         } else {
           // value were emitted in handle{Date,Time}Pick, nothing to update here
@@ -390,7 +396,7 @@
       },
 
       resetView() {
-        if (this.selectionMode === 'month') {
+        if (this.selectionMode === 'month' || this.selectionMode === 'months') {
           this.currentView = 'month';
         } else if (this.selectionMode === 'year') {
           this.currentView = 'year';
@@ -546,7 +552,7 @@
       },
 
       footerVisible() {
-        return this.showTime || this.selectionMode === 'dates';
+        return this.showTime || this.selectionMode === 'dates' || this.selectionMode === 'months';
       },
 
       visibleTime() {
