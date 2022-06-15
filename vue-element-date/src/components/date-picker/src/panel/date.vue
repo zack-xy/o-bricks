@@ -191,7 +191,7 @@ import { debuglog } from 'util';
       },
 
       value(val) {
-        if (this.selectionMode === 'dates' && this.value) return;
+        if ((this.selectionMode === 'dates' || this.selectionMode === 'months') && this.value) return;
         if (isDate(val)) {
           this.date = new Date(val);
         } else {
