@@ -1,0 +1,17 @@
+{
+  "name": "mini-jest",
+  "version": "1.0.0",
+  "description": "Implement A mini Jest",
+  "license": "MIT",
+  "author": "zack zheng",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "expect": "^28.1.1",
+    "glob": "^8.0.3",
+    "jest-circus": "^28.1.2",
+    "jest-haste-map": "^28.1.1",
+    "jest-mock": "^28.1.1",
+    "jest-worker": "^28.1.1"
+  }
+}
