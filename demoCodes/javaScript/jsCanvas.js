@@ -1,21 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 //  <canvas id="drawing" width="200" height="200"></canvas>
 
-
-let drawing = document.getElementById("drawing")
-
+const drawing = document.getElementById('drawing')
 
 // 确保浏览器支持<canvas>
 if (drawing.getContext) {
-  let context = drawing.getContext("2d")
+  const context = drawing.getContext('2d')
 
   // 获取图像的数据URI
-  let imgURI = drawing.toDataURL("image/png");
-
+  const imgURI = drawing.toDataURL('image/png')
 
   // 显示图片
-  let image = document.createElement("img");
-  image.src = imgURI;
-  document.body.appendChild(image);
-
-
+  const image = document.createElement('img')
+  image.src = imgURI
+  document.body.appendChild(image)
 }

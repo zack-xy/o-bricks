@@ -2,6 +2,7 @@
 let enabled = true
 
 function expensiveOperation() {
+  // eslint-disable-next-line no-console
   console.log('Invoked at', Date.now())
 }
 
