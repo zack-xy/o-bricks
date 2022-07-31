@@ -2,14 +2,18 @@
   "name": "jest-starter",
   "version": "1.0.0",
   "description": "#### Original Address",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "eslint": "^8.20.0",
     "jest": "27.5.1"
   }
 }
