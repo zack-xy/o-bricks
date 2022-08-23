@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <monthsPage />
+    <!-- <monthsPage /> -->
+    <selectFilterSelAll/>
   </div>
 </template>
 
 <script>
-import monthsPage from './pages/monthsPage.vue'
+// import monthsPage from './pages/monthsPage.vue'
+import selectFilterSelAll from './pages/selectFilterSelAll.vue'
 
 export default {
   name: 'App',
   components: {
-    monthsPage,
+    // monthsPage,
+    selectFilterSelAll,
   },
 }
 </script>
