@@ -43,8 +43,6 @@ export default {
       if (visible) {
         this.$nextTick(() => {
           if (!instance) {
-            const selRef = this.$refs.select
-            const that = this
             const parentNode = document.querySelector('.custom-all-select .el-select-dropdown__wrap')
             const SelectBtnConstructor = Vue.extend(selectBtn)
             instance = new SelectBtnConstructor({
@@ -53,15 +51,16 @@ export default {
               },
             })
             instance.$mount()
-            instance.$on('selectAll', () => {
-              console.log(this)
-              const filteredOptions = that.options.filter((item) => new RegExp(escapeRegexpString(selRef.query), 'i').test(item.label))
-              that.value = filteredOptions.map((item) => item.value)
-            })
+            instance.$on('selectAll', this.filterSelectAll)
             parentNode.insertBefore(instance.$el, parentNode.lastChild)
           }
         })
       }
+    },
+    filterSelectAll() {
+      const selRef = this.$refs.select
+      const filteredOptions = this.options.filter((item) => new RegExp(escapeRegexpString(selRef.query), 'i').test(item.label))
+      this.value = filteredOptions.map((item) => item.value)
     },
   },
 }
