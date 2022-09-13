@@ -26,3 +26,7 @@
 
 ## settimeout链调用
 ## [每隔3秒调用一次](https://github.com/ZackZheng-xy/o-bricks/blob/main/jsFragment/jsSettimeout.js)
+
+
+## js代码片段迁移到另一个项目
+## [js-snippets](https://github.com/zack-xy/js-snippets)
