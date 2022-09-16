@@ -2,3 +2,4 @@
 *.json
 // vue-cli的项目，eslint规则和element不同，项目只为测试实现功能，不必进行eslint
 src/components/date-picker
+*.vue
