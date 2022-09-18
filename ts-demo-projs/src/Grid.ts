@@ -16,9 +16,9 @@ class Margin {
 }
 
 function ConsolidatedGrid(grid: Grid, margin: Margin): Grid & Margin {
-  let consolidateGrid = <Grid & Margin>{}
-  consolidateGrid.Width = grid.Width + margin.Width
-  consolidateGrid.Height = grid.Height + margin.Height
+  let consolidateGrid = <Grid & Margin>{...margin}
+  consolidateGrid.Width += grid.Width
+  consolidateGrid.Height += grid.Height
   consolidateGrid.Left = margin.Left
   consolidateGrid.Top = margin.Top
   consolidateGrid.Padding = margin.Padding ? margin.Padding : grid.Padding
