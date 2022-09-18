@@ -1,3 +1,5 @@
+type StringOrNumber = string | number
+
 class RangeValidationBase {
   constructor(private start: number, private end: number) {}
   protected RangeCheck(value: number): boolean {
@@ -29,7 +31,7 @@ class AnyRangeValidation extends RangeValidationBase {
 }
 
 class UnionRangeValidation extends RangeValidationBase {
-  IsInRange(value: string | number): boolean {
+  IsInRange(value: StringOrNumber): boolean {
     if(typeof value === 'number') {
       return this.RangeCheck(value)
     }
