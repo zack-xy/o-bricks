@@ -11,21 +11,21 @@
 
 ---
 
-### mockServer
+### [mockServer](https://github.com/zack-xy/o-bricks/blob/3cab2c529347573052fde3ca0e2c1240f91e4551/mockServer/readme.md)
 mock服务器
 启动：
 `node server/index.js`
 `pm2 start server/index.js`
 
---- 
+---
 
 ### jsFragment
 JavaScript片段
 
 
---- 
+---
 
-### ts-demo
+### [ts-demo](https://github.com/zack-xy/o-bricks/blob/main/ts-demo/README.md)
 使用typescript的demo，贪吃蛇
 
 ---
@@ -34,12 +34,12 @@ JavaScript片段
 
 ---
 
-### pomodoroTimer
+### [pomodoroTimer](https://github.com/zack-xy/o-bricks/blob/3cab2c529347573052fde3ca0e2c1240f91e4551/pomodoroTimer/readme.md)
 网页倒计时器（番茄钟）
 
 ---
 
-### vue-element-date
+### [vue-element-date](https://github.com/zack-xy/o-bricks/blob/c5039060f2e9b9fe099173aca143515ebaf82814/vue-element-date/README.md)
 
 尝试为element ui实现months多选月份
 
