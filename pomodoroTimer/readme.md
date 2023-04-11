@@ -1,3 +1,4 @@
 ### 回顾dom操作，一个番茄钟定时器
 
-<img width="731" alt="截屏2023-04-10 10 51 34" src="https://user-images.githubusercontent.com/18522167/230815926-a6083a81-0777-49da-b729-ef7a3c5b73e2.png">
+<img width="906" alt="截屏2023-04-11 14 21 33" src="https://user-images.githubusercontent.com/18522167/231073449-74ca7aca-1922-4a36-8f0a-a94efd624a5e.png">
+
