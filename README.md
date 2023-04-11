@@ -11,6 +11,11 @@
 
 ---
 
+### [原生js乞丐版刮刮乐](https://github.com/zack-xy/o-bricks/blob/main/scratch-card/README.md)
+
+---
+
+
 ### [mockServer](https://github.com/zack-xy/o-bricks/blob/3cab2c529347573052fde3ca0e2c1240f91e4551/mockServer/readme.md)
 mock服务器
 启动：
