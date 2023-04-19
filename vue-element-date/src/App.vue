@@ -3,7 +3,8 @@
   <div id="app">
     <!-- <monthsPage /> -->
     <!-- <selectFilterSelAll/> -->
-    <selectVirtualScroll />
+    <!-- <selectVirtualScroll /> -->
+    <otherDragTable />
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 // import monthsPage from './pages/monthsPage.vue'
 // import selectFilterSelAll from './pages/selectFilterSelAll.vue'
 import selectVirtualScroll from './pages/selectVirtualScroll.vue'
+import otherDragTable from './pages/otherDragTable.vue';
 
 export default {
   name: 'App',
@@ -18,6 +20,7 @@ export default {
     // monthsPage,
     // selectFilterSelAll,
     selectVirtualScroll,
+    otherDragTable
   },
 }
 </script>
