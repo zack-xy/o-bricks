@@ -18,11 +18,10 @@
 
 ### [原生js乞丐版验证滑块](https://github.com/zack-xy/o-bricks/blob/main/slider-validate/README.md)
 
----
 
 ---
 
-### [vue中原生canvas简版签名板](https://github.com/zack-xy/o-bricks/blob/aaaa6f7e5fde2068ff0f9f3361c5e594989b681e/signature-vue/README.md)
+### [vue3中原生canvas简版签名板](https://github.com/zack-xy/o-bricks/blob/aaaa6f7e5fde2068ff0f9f3361c5e594989b681e/signature-vue/README.md)
 
 ---
 
