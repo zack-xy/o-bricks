@@ -17,3 +17,8 @@
 
 ![chrome_XAT6rsQ2fj](https://user-images.githubusercontent.com/18522167/190673726-617ce548-d8eb-420f-9a9f-7d44e389e456.gif)
 
+#### [可拖拽的表格](https://github.com/zack-xy/o-bricks/blob/6586725e8d08ac10f31da80252636737f079e185/vue-element-date/src/pages/monthsPage.vue)
+
+
+#### [如何基于element图片预览实现一个图片走马灯](https://github.com/zack-xy/o-bricks/blob/main/vue-element-date/src/pages/picsCarousel.vue)
+

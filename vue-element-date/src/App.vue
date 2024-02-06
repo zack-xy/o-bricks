@@ -4,7 +4,8 @@
     <!-- <monthsPage /> -->
     <!-- <selectFilterSelAll/> -->
     <!-- <selectVirtualScroll /> -->
-    <otherDragTable />
+    <!-- <otherDragTable /> -->
+    <customTree />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 // import selectFilterSelAll from './pages/selectFilterSelAll.vue'
 import selectVirtualScroll from './pages/selectVirtualScroll.vue'
 import otherDragTable from './pages/otherDragTable.vue';
+import customTree from './pages/customTree.vue';
 
 export default {
   name: 'App',
@@ -20,7 +22,8 @@ export default {
     // monthsPage,
     // selectFilterSelAll,
     selectVirtualScroll,
-    otherDragTable
+    otherDragTable,
+    customTree
   },
 }
 </script>
