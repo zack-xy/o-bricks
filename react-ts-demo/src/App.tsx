@@ -21,7 +21,9 @@ import './App.css'
 // Context
 import ContextDemo from './ContextDemo'
 
+// Reducer
 import CountReducer from './CountReducer'
+import TodoReducer from './TodoReducer'
 
 // Form
 import FormElesDemo from './FormElesDemo'
@@ -63,7 +65,8 @@ function App() {
       {/* <List2></List2> */}
 
       {/* <ContextDemo></ContextDemo> */}
-      <CountReducer></CountReducer>
+      {/* <CountReducer></CountReducer> */}
+      <TodoReducer></TodoReducer>
 
     </div>
   )
