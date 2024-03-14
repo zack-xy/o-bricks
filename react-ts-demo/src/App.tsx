@@ -25,6 +25,9 @@ import ContextDemo from './ContextDemo'
 import CountReducer from './CountReducer'
 import TodoReducer from './TodoReducer'
 
+// Redux
+import ReduxCountDemo from './ReduxCountDemo'
+
 // Form
 import FormElesDemo from './FormElesDemo'
 
@@ -66,7 +69,9 @@ function App() {
 
       {/* <ContextDemo></ContextDemo> */}
       {/* <CountReducer></CountReducer> */}
-      <TodoReducer></TodoReducer>
+      {/* <TodoReducer></TodoReducer> */}
+
+      <ReduxCountDemo></ReduxCountDemo>
 
     </div>
   )
