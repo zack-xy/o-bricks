@@ -21,6 +21,8 @@ import './App.css'
 // Context
 import ContextDemo from './ContextDemo'
 
+import CountReducer from './CountReducer'
+
 // Form
 import FormElesDemo from './FormElesDemo'
 
@@ -60,7 +62,8 @@ function App() {
       {/* <List1 title="问卷调查列表"></List1> */}
       {/* <List2></List2> */}
 
-      <ContextDemo></ContextDemo>
+      {/* <ContextDemo></ContextDemo> */}
+      <CountReducer></CountReducer>
 
     </div>
   )
