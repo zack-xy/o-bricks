@@ -18,6 +18,9 @@ import './App.css'
 // import StyledComponentDemo from './StyledComponentDemo'
 // import StyledJSX from './StyledJSX'
 
+// Context
+import ContextDemo from './ContextDemo'
+
 // Form
 import FormElesDemo from './FormElesDemo'
 
@@ -52,10 +55,12 @@ function App() {
       {/* <StyledComponentDemo></StyledComponentDemo> */}
       {/* <StyledJSX></StyledJSX> */}
 
-      <FormElesDemo></FormElesDemo>
+      {/* <FormElesDemo></FormElesDemo> */}
 
       {/* <List1 title="问卷调查列表"></List1> */}
       {/* <List2></List2> */}
+
+      <ContextDemo></ContextDemo>
 
     </div>
   )
