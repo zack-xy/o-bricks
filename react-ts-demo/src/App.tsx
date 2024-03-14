@@ -27,6 +27,7 @@ import TodoReducer from './TodoReducer'
 
 // Redux
 import ReduxCountDemo from './ReduxCountDemo'
+import TodoListRedux from './TodoListRedux'
 
 // Form
 import FormElesDemo from './FormElesDemo'
@@ -71,7 +72,8 @@ function App() {
       {/* <CountReducer></CountReducer> */}
       {/* <TodoReducer></TodoReducer> */}
 
-      <ReduxCountDemo></ReduxCountDemo>
+      {/* <ReduxCountDemo></ReduxCountDemo> */}
+      <TodoListRedux></TodoListRedux>
 
     </div>
   )
