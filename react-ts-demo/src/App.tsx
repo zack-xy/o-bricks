@@ -31,6 +31,7 @@ import TodoListRedux from './TodoListRedux'
 
 // Mobx
 import MobxBasicDemo from './MobxDemo/BasicDemo'
+import MobxTodoList from './MobxDemo/TodoList/index'
 
 // Form
 import FormElesDemo from './FormElesDemo'
@@ -78,7 +79,8 @@ function App() {
       {/* <ReduxCountDemo></ReduxCountDemo> */}
       {/* <TodoListRedux></TodoListRedux> */}
 
-      <MobxBasicDemo></MobxBasicDemo>
+      {/* <MobxBasicDemo></MobxBasicDemo> */}
+      <MobxTodoList></MobxTodoList>
 
     </div>
   )
