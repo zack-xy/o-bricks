@@ -29,6 +29,9 @@ import TodoReducer from './TodoReducer'
 import ReduxCountDemo from './ReduxCountDemo'
 import TodoListRedux from './TodoListRedux'
 
+// Mobx
+import MobxBasicDemo from './MobxDemo/BasicDemo'
+
 // Form
 import FormElesDemo from './FormElesDemo'
 
@@ -73,7 +76,9 @@ function App() {
       {/* <TodoReducer></TodoReducer> */}
 
       {/* <ReduxCountDemo></ReduxCountDemo> */}
-      <TodoListRedux></TodoListRedux>
+      {/* <TodoListRedux></TodoListRedux> */}
+
+      <MobxBasicDemo></MobxBasicDemo>
 
     </div>
   )
