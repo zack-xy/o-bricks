@@ -62,6 +62,10 @@ const TodoList: FC<PropsList> = observer((props: PropsList) => {
           return <TodoView key={id} todo={todo} del={del} />
         })}
       </ul>
+      <p>
+        完成的数量
+        {store.completedTodosCount}
+      </p>
     </>
   )
 })
