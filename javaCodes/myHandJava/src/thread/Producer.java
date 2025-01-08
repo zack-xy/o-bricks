@@ -12,7 +12,14 @@ public class Producer implements Runnable{
 
     @Override
     public void run() {
-        drop.add("Apple");
+       String foods[] = {"beef", "bread", "apple", "cookie"};
+       for(int i=0;i<foods.length;i++) {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
+        drop.add(foods[i]);
+       }
+       drop.add(null);
     }
   
 }
