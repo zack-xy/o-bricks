@@ -1,6 +1,9 @@
 package fileIO;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.function.Consumer;
 
 public class Files {
@@ -26,8 +29,13 @@ public class Files {
   // mkdirs会外到里不存在的文件夹都会创建
   public static void mkparents(File file) {
     File parent = file.getParentFile();
+    if(parent == null) return;  // 顶级盘符没有parent，这时就是null
     if(parent.exists()) return;
     parent.mkdirs();  // 创建父目录
+  }
+
+  public static void move(String src, String dest) {
+    move(new File(src), new File(dest));
   }
 
   // 移动文件
@@ -53,6 +61,30 @@ public class Files {
     File[] subfiles = dir.listFiles();
     for(File sf : subfiles) {
       delete(sf);
+    }
+  }
+
+  // 向文件中写入字节数据
+  public static void write(byte[] bytes, File file) {
+    if(bytes == null || file == null) return;
+    if(file.exists()) return;
+
+    mkparents(file);  // 如果路径不存在，创建文件路径
+    FileOutputStream fos = null;
+    try {
+      fos = new FileOutputStream(file);
+      fos.write(bytes);
+    } catch (FileNotFoundException e) {
+     e.printStackTrace();
+    } catch(IOException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        fos.close();
+      } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+      }
     }
   }
 }
