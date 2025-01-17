@@ -19,6 +19,7 @@
             System.out.println(123);
         }
     %>
+  <span>变量年龄 <%=age%></span>
     <%
         String username = request.getParameter("username");
         String password = request.getParameter("password");
