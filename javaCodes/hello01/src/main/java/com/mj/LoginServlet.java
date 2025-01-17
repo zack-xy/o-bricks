@@ -23,8 +23,6 @@ public class LoginServlet extends HttpServlet {
         // 1、取出客户端发送的数据
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        System.out.println(username + "__" + password);
-
         resp.setContentType("text/plain;charset=utf-8");
         PrintWriter out = resp.getWriter();
         // 2、判断用户名密码是否正确
@@ -45,6 +43,30 @@ public class LoginServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("LoginServlet zack doPost");
+        // 0、设置请求数据的编码
+        req.setCharacterEncoding("utf-8");
+        // 1、取出客户端发送的数据
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        // 设置响应的内容类型
+        resp.setContentType("text/plain;charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        // 2、判断用户名密码是否正确
+        if("123".equals(username) && "123".equals(password)) {
+            // 3、给客户端发送响应
+            out.write("登陆成功");
+        } else {
+            out.write("登陆失败");
+        }
     }
+
+    /**
+     * HTTP请求
+     * > GET请求
+     *      1> 请求参数拼接在请求路径后面
+     *      2> 请求头
+     * > POST请求
+     *      1> 请求参数放在请求体中
+     *      2> 请求头
+     */
 }
