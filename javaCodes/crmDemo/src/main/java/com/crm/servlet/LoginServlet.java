@@ -50,6 +50,11 @@ public class LoginServlet extends HttpServlet {
     }
 
     private void success(PrintWriter out) {
+        out.write("<html>");
+        out.write("<head>");
+        out.write("<href src=\"http://localhost:8080/crm/index.css\">");
+        out.write("</head>");
+        out.write("<body>");
         out.write("<h1 style=\"color: blue; border: 1px solid black;\">登陆成功</h1>");
         out.write("<table>");
         out.write("<thead>");
@@ -70,6 +75,8 @@ public class LoginServlet extends HttpServlet {
         }
         out.write("</tbody>");
         out.write("</table>");
+        out.write("</body>");
+        out.write("</html>");
     }
 
     private void failed(PrintWriter out) {
