@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +12,7 @@
     </style>
 </head>
 <body>
+
 <a href="add.html">添加</a>
 
 <table>
@@ -21,21 +24,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>张三</td>
-      <td>23</td>
-      <td>178cm</td>
-    </tr>
-    <tr>
-      <td>里斯</td>
-      <td>30</td>
-      <td>180cm</td>
-    </tr>
-    <tr>
-      <td>王五</td>
-      <td>60</td>
-      <td>155cm</td>
-    </tr>
+    <c:forEach begin="1" end="3">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>身高</td>
+        </tr>
+    </c:forEach>
   </tbody>
 </table>
 </body>
