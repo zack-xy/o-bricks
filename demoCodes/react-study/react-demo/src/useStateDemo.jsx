@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// eslint-disable-next-line
 import { flushSync } from 'react-dom';
 
 let UseStateCom = (props) => {
@@ -14,6 +15,7 @@ let UseStateCom = (props) => {
     username: 'zack',
     age: 30
   })
+  // eslint-disable-next-line
   const [count3, setCount3] = useState(() => {
     return initCount()
   })
