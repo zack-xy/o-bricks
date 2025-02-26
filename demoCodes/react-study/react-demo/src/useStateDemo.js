@@ -2,9 +2,21 @@ import { useState } from 'react';
 import { flushSync } from 'react-dom';
 
 let UseStateCom = (props) => {
+
+  const initCount = () => {
+    console.log('initCount')
+    return 2 * 2 * 2
+  }
   // useState需要放在组件最前面调用，不要在函数或语句中进行调用
   const [count, setCount] = useState(0)
   const [count2, setCount2] = useState(0)
+  const [info, setInfo] = useState({
+    username: 'zack',
+    age: 30
+  })
+  const [count3, setCount3] = useState(() => {
+    return initCount()
+  })
 
   const handleClick = () => {
     /**
@@ -47,6 +59,29 @@ let UseStateCom = (props) => {
   }
 
   console.log("组件被渲染！！");
+
+  // 特性2: useState中的值在修改的时候，并不会进行原值的合并处理
+  const hanldeModifyInfo = () => {
+    // 只修改一个username，age就丢了
+    // setInfo({
+    //   username: 'zheng'
+    // })
+    setInfo({
+      ...info,
+      username: 'zheng'
+    })
+  }
+
+
+  // 特性3: 惰性初始state
+  // initCount
+  /**
+   * 惰性初始 state 允许我们传入一个函数作为 useState 的参数，
+   * 这个函数只会在组件的初始渲染时被调用一次，其返回值会作为初始 state。
+   * 后续组件重新渲染时，这个函数不会再被调用，从而避免了不必要的重复计算。
+   * 
+   */
+
   
 
   return (
@@ -58,6 +93,11 @@ let UseStateCom = (props) => {
       <div>函数式更新：count2的值，{count2}</div>
       <hr />
       <button onClick={hanldeAutoClick}>自动批处理</button>
+      <hr />
+      <p>我的姓名是: {info.username}, 年龄是： {info.age}</p>
+      <button onClick={hanldeModifyInfo}>点击修改信息</button>
+      <hr />
+      <p>count3的值：{count3}</p>
     </div>
   )
 }
