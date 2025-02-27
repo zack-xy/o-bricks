@@ -2,6 +2,10 @@ import React, { useState } from "react"
 
 const Head = React.memo(() => {
   // React.memo组件，只有在props发生变化时，才会重新渲染
+  // 如果不包裹的话，父组件state变化了，子组件就会重新渲染
+  // 尽管变化的数据跟子组件没有关系
+
+  // 浅比较变化：基本类型 -> 值相等 引用类型 -> 比较内存地址
   console.log("head render!!!!");
   return (
     <div>Head组件， {Math.random()}</div>

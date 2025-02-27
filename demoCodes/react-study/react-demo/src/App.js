@@ -1,9 +1,11 @@
-/* eslint-disable no-unused-vars */
 import UseStateCom from './useStateDemo';
 import UseEffectCom from './useEffectDemo';
 import UseRefCom from './useRefDemo';
 import UseContextCom from './useContextDemo';
 import UseMemoCom from './useMemoDemo';
+import UseMemoCom2 from './useMemoDemo2';
+import UseRecuderCom from './useReducerDemo';
+import TransitionCom from './startTransitionDemo';
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
       {/* <UseEffectCom/> */}
       {/* <UseRefCom /> */}
       {/* <UseContextCom /> */}
-      <UseMemoCom />
+      {/* <UseMemoCom /> */}
+      {/* <UseMemoCom2 /> */}
+      {/* <UseRecuderCom /> */}
+      <TransitionCom />
     </div>
   );
 }
