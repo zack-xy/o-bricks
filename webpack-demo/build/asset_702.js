@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebpack_demo=self.webpackChunkwebpack_demo||[]).push([[702],{702:(e,c,k)=>{function o(e){console.log(e)}k.r(c),k.d(c,{default:()=>o})}}]);
