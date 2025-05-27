@@ -1,0 +1,15 @@
+# 虚拟环境
+venv/
+.env/
+
+# 编译文件
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# 日志与数据
+*.log
+*.sqlite3
