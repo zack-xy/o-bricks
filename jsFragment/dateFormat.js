@@ -24,25 +24,3 @@ const formatDate = (date, rule) => {
   }
   return fmt
 }
-/**
-* 时间戳转日期格式
-* @param {*} timestamp 时间戳
-* @returns {Date} 返回一个日期
-*/
-const fromTimestamp = timestamp => new Date(Number(timestamp))
-/**
-* 日期字符串转时间戳
-* @param {*} dateStr  例如：2021/10/1、2021-10-1 10:23:10
-* @returns {Number} 毫秒数
-*/
-const toTimestamp = (dateStr) => {
-  try {
-    if (dateStr.includes(":")) {
-      return Date.parse(dateStr.replace(/\\/g, "-"))
-    } else {
-      return Date.parse(dateStr.replace(/-/g, "/"))
-    }
-  } catch (error) {
-    return new Date().getTime()
-  }
-}
