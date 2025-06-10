@@ -11,6 +11,6 @@ const percentagePoint = (num) => {
 * @param {Number} 
 * @returns {String} 
 */
-const percentagePoint = (num) => {
+const percentagePoint2 = (num) => {
   return Number(num).toLocaleString()
 }
