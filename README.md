@@ -11,25 +11,6 @@
 
 ---
 
-### [原生js乞丐版刮刮乐](https://github.com/zack-xy/o-bricks/blob/main/scratch-card/README.md)
-
----
-
-
-### [原生js乞丐版验证滑块](https://github.com/zack-xy/o-bricks/blob/main/slider-validate/README.md)
-
-
----
-
-### [vue3中原生canvas简版签名板](https://github.com/zack-xy/o-bricks/blob/aaaa6f7e5fde2068ff0f9f3361c5e594989b681e/signature-vue/README.md)
-
----
-
-
-### [原生js乞丐版图片懒加载](https://github.com/zack-xy/o-bricks/blob/main/imgLazyLoad/readme.md)
-
----
-
 ### [mockServer](https://github.com/zack-xy/o-bricks/blob/3cab2c529347573052fde3ca0e2c1240f91e4551/mockServer/readme.md)
 mock服务器
 启动：
@@ -41,31 +22,11 @@ mock服务器
 ### jsFragment
 JavaScript片段
 
-
 ---
 
-### [ts-demo](https://github.com/zack-xy/o-bricks/blob/main/ts-demo/README.md)
-使用typescript的demo，贪吃蛇
-
----
-### v-cli
-尝试写一个cli工具
-
----
-
-### [vue-element-date](https://github.com/zack-xy/o-bricks/blob/c5039060f2e9b9fe099173aca143515ebaf82814/vue-element-date/README.md)
+### [vue-element-date](https://github.com/zack-xy/o-bricks/blob/main/demoCodes/Vue/Vue2/vue-element-date/README.md)
 
 + 为element ui实现months多选月份
 + 为element ui下拉框增加一个一键全选的功能按钮
 + 为一键全选的下拉框增加虚拟滚动
 
-
----
-
-### jest-starter
-学习如何使用Jest
-
----
-
-### mini-jest
-尝试写一个mini的Jest框架
