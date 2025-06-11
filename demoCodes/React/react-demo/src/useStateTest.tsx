@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 
-export default function Counter()  {
+export default function Counter() {
   const [number, setNumber] = useState(0)
 
   const hanldeAdd = () => {
-    setNumber(number + 1)
+    setNumber(number + 5)
     setNumber(n=>n+1)
-    setNumber(number + 1)
+    setNumber(number + 2) // 有这一行就是2，没有这一行是6
   }
 
   return (
