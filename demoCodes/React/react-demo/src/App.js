@@ -7,6 +7,7 @@ import UseMemoCom2 from './useMemoDemo2';
 import UseRecuderCom from './useReducerDemo';
 import TransitionCom from './startTransitionDemo';
 import Welcome from './Welcome';
+import UseStateTest from "./useStateTest";
 
 // 路由
 import { Outlet, Link } from 'react-router-dom';
@@ -26,6 +27,9 @@ function App() {
       {/* <Welcome /> */}
       <Link to="/">首页</Link> ｜ <Link to="/about">关于</Link>
       <Outlet />
+      <br></br>
+
+      <UseStateTest />
     </div>
   );
 }
