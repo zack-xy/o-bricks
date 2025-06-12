@@ -2,6 +2,20 @@ import { useState } from 'react';
 // eslint-disable-next-line
 import { flushSync } from 'react-dom';
 
+// Hook是特殊函数
+// 1. 只在React渲染时有效
+// 2. 以use开头
+// 3. 只能在组件或自定义Hook最顶层使用（不能在条件语句，循环语句或其他潜嵌套函数内调用）
+const Example1 = (props) => {
+  const [index, setIndex] = useState(0)
+  return (
+    <div>
+      <h4>第一个例子</h4>
+      index的值是：{index}
+    </div>
+  )
+}
+
 let UseStateCom = (props) => {
 
   const initCount = () => {
@@ -88,8 +102,10 @@ let UseStateCom = (props) => {
 
   return (
     <div>
+      <h2 className="bg-sky-700 text-red-900">UseState示例：</h2>
+      <Example1 />
       <button onClick={handleClick}>点击1</button>
-      <div>count1的值，{count}</div>
+      <div className='red'>count1的值，{count}</div>
       <hr />
       <button onClick={handleClick2}>点击2</button>
       <div>函数式更新：count2的值，{count2}</div>
@@ -100,6 +116,7 @@ let UseStateCom = (props) => {
       <button onClick={hanldeModifyInfo}>点击修改信息</button>
       <hr />
       <p>count3的值：{count3}</p>
+      <hr className="aaa" />
     </div>
   )
 }
