@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目的(缩放)大小</title>
+  <style>
+    .container {
+      display: flex;
+      inline-size: 1000px;
+      font-size: 1.5rem;
+    }
+
+    .item {
+      flex: 1;
+    }
+
+    .item span {
+      font-size:  3rem;
+    }
+
+    .itemA {
+      background-color: antiquewhite;
+    }
+
+    .itemB {
+      background-color: aquamarine;
+    }
+
+    .itemC {
+      background-color: chartreuse;
+    }
+
+    .itemD {
+      background-color: cadetblue;
+    }
+
+    .itemE {
+      background-color: coral;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item itemA"><span>A</span>longlonglongword</div>
+    <div class="item itemB"><span>B</span>ook</div>
+    <div class="item itemC"><span>C</span>ountries in the east</div>
+    <div class="item itemD"><span>D</span>iscuss</div>
+    <div class="item itemE" style="flex-basis: 200px;"><span>E</span>astern</div>
+  </div>
+</body>
+</html>
