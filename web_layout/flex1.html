@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    .container {
+      display: flex;
+      background-color: aliceblue;
+    }
+    .box1 {
+      height: 50px;
+      width: 200px;
+      border: 1px solid #333;
+    }
+    .box2 {
+      height: 80px;
+      width: 250px;
+      border: 1px solid #333;
+    }
+    .box3 {
+      height: 40px;
+      width: 150px;
+      border: 1px solid #333;
+    }
+    .red {
+      color: red;
+    }
+    .container2 {
+      margin-top: 10px;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box4</div>
+    文本啊，没有标签
+    <span class="red">内联标签</span>
+    <input type="text">
+  </div>
+  <div class="container2">
+    <span>我是一段文字，我是内联元素</span>
+  </div>
+</body>
+</html>
