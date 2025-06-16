@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>溢出对齐</title>
+  <style>
+    .parent {
+      width: 100px;
+      height: 200px;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      gap: 10px;
+      align-items: safe center;   /* 增加新增了 `safe` 和 `unsafe` 关键字， safe在溢出的时候转换成start */
+    }
+    .child {
+      border: 1px dashed pink;
+    }
+    .parent2 {
+      width: 100px;
+      height: 200px;
+      border: 1px solid #333;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child">盒子1</div>
+    <div class="child" style="width: 150px;">中间的盒子内容会超出导致无法看到</div>
+    <div class="child">盒子3</div>
+  </div>
+
+  <!-- 可以使用margin:auto达到相同的效果 -->
+  <div class="parent2">
+    <div class="child">盒子1</div>
+    <div class="child" style="width: 150px;margin: auto;">中间的盒子内容会超出导致无法看到</div>
+    <div class="child">盒子3</div>
+  </div>
+</body>
+</html>
