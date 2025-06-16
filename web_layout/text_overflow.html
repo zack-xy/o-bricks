@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本截断</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 80px;
+      border: 1px solid palevioletred;
+    }
+    
+    .example1 {
+      overflow: hidden; /* 文字超出限定宽度，隐藏超出的内容 */
+      white-space: nowrap; /* 设置文字在一行显示，不能换行 */
+      text-overflow: ellipsis; /* 规定文本溢出时，用省略符号代表被修剪的文本 */
+    }
+
+    .example2 {
+      display: -webkit-box; /* 值必须为-webkit-box或者-webkit-inline-box */
+      -webkit-box-orient: vertical; /* 值必须为vertical */
+      -webkit-line-clamp: 4;  /*值为数字，表示显示几行*/
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <h3>单行文本</h3>
+  <div class="container example1">测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度</div>
+
+  <h3>多行文本</h3>
+  <div class="container example2">测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度测试文本长度</div>
+</body>
+</html>
