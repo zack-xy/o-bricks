@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平居中</title>
+  <link href="./common.css" rel="stylesheet">
+  <style>
+    .container {
+      border: 1px solid #333;
+      margin: 10px 0;
+    }
+    .block {
+      border: 1px solid green;
+    }
+
+    .container3 {
+      border: 1px solid #333;
+    } 
+
+    .container3::after {
+      content: "";
+      display: block;
+      clear: both; /* 关键代码 */
+    }
+
+  </style>
+</head>
+<body>
+  <h3>水平居中 - 方式1： text-align: center</h3>
+  <h4>使用限制：在块元素（父）上设置，使块元素内的行内元素针对父块元素水平居中
+    <span style="font-weight: 700;color: red;">针对行内元素或行内块元素</span>
+  </h4>
+  <!-- 例子1: 块元素内文字 -->
+  <div class="container" style="text-align: center;">
+    我是一段文字，我需要水平居中
+  </div>
+  <!-- 例子2: 块元素内块元素，可以看到设在最外面的，影响里面的行内元素，文字居中是针对其父元素的 -->
+  <div class="container" style="text-align: center;">
+    <p>我是一段文字，我需要水平居中</p>
+  </div>
+  <!-- 例子3: 内联块元素 -->
+  <div class="container" style="text-align: center;">
+    <div style="display: inline-block;">我是一段文字，我需要水平居中</div>
+  </div>
+  <div class="container" style="text-align: center;">
+    <div class="container" style="display: inline-block;width: 1000px;">
+      <div class="container" style="display: inline-block;width: 800px;">
+        <div class="container" style="display: inline-block;width: 700px;">
+          <div class="container" style="display: inline-block;width: 600px;">
+            <p>我是一段文字，我需要水平居中</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3>水平居中 - 方式2： margin: 0 auto</h3>
+  <h4>使用限制：在子块元素上设置<span style="font-weight: 700;color: red;">针对块元素（对inline-block无效）</span></h4>
+  <div class="container">
+    <div class="block" style="width: 200px;height: 100px;margin: 0 auto;">块元素</div>
+  </div>
+  <div class="container">
+    <div class="block" style="width: 1000px;height: 100px;margin: 0 auto;">
+      <div class="block" style="width: 800px;height: 100px;margin: 0 auto;">
+        <div class="block" style="width: 600px;height: 100px;margin: 0 auto;">
+          块
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="block" style="display: inline-block;width: 200px;height: 100px;margin: 0 auto;">块元素</div>
+  </div>
+
+  <hr>
+  <h3>水平居中 - 方式3： 浮动</h3>
+  <h4>使用限制：在子块元素上设置浮动，父元素设置width: fit-content; margin: 0 auto;
+    <span style="font-weight: 700;color: red;">width: fit-content 会让父元素宽度收缩到与内容一致（包括浮动元素），此时边框会包裹所有子元素</span>
+  </h4>
+  <a href="https://zack-xy.github.io/knownNet/others/interview/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/CSS%E9%9D%A2%E8%AF%95%E9%A2%98.html#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F">这里涉及清除浮动</a>
+  <div class="container3" style="width: fit-content;margin: 0 auto;">
+    <span style="float: left;">我是一段文字，我需要水平居中</span>
+  </div>
+  <div class="container3" style="width: fit-content;margin: 0 auto;">
+    <div class="block" style="float: right;width: 200px;height: 100px;margin: 0 auto;">块元素</div>
+  </div>
+
+  <hr>
+  <h3>水平居中 - 方式4： 定位</h3>
+  <div class="container" style="height: 80px;">
+    <p style="position: absolute;left: 50%;transform: (-50%, 0);">我是一段文字，我需要水平居中</p>
+    <span style="position: absolute;left: 50%;transform: (-50%, 0);">内联元素水平居中</span>
+  </div>
+  <hr>
+
+
+
+
+  <h3>水平居中 - 方式5： flex</h3>
+  <div class="container" style="display: flex;justify-content: center;">
+    <p>flex水平居中</p>
+  </div>
+  <hr>
+  
+  <h3>水平居中 - 方式6： grid</h3>
+  <div class="container" style="display: grid;place-items: center;">
+    <p>grid水平居中</p>
+  </div>
+</body>
+</html>
