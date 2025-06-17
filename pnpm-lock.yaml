@@ -1,0 +1,15 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  demoCodes/my_utils: {}
+
+  demoCodes/testMonorepo:
+    dependencies:
+      my_utils:
+        specifier: workspace:*
+        version: link:../my_utils
