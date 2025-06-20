@@ -41,4 +41,4 @@ SET @email_count = 0;
 CALL MailingListCount(@email_count);
 
 -- 查看结果
-SELECT @email_count AS '有效邮箱数量';
+SELECT @email_count AS '有效邮箱数量'; 
