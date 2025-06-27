@@ -25,15 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen`}
       >
-        <div className="w-screen h-screen flex">
-          <div className="w-3xs">左边</div>
-          <div className="grow">
-            <div>header</div>
-            <main>{children}</main>
-          </div>
-        </div>
+        {children}
       </body>
     </html>
   );
