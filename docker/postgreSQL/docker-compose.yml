@@ -10,6 +10,7 @@ services:
     environment:
       POSTGRESQL_USERNAME: root
       POSTGRESQL_PASSWORD: 123456 
+      POSTGRESQL_POSTGRES_PASSWORD: 'zack123!'
       POSTGRESQL_DATABASE: mydb
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U root -d mydb"]
