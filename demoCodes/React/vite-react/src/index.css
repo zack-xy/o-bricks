@@ -66,3 +66,21 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dashboard-layout {
+  --border-radius: clamp(16px, 2vw, 25px);
+  --spacing: clamp(12px, 2vw, 20px);
+  
+  border: 1px solid hsl(0 0% 20% / 0.2);
+  border-radius: var(--border-radius);
+  width: calc(100dvw - var(--spacing) * 2 - 42px);
+  height: calc(100dvh - var(--spacing) * 2 - 42px);
+  padding: var(--spacing);
+  margin: var(--spacing);
+  background: linear-gradient(135deg, hsl(0 0% 98% / 0.9), hsl(0 0% 100%));
+  box-shadow: 
+    0 4px 6px -1px hsl(0 0% 0% / 0.1),
+    0 2px 4px -2px hsl(0 0% 0% / 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
