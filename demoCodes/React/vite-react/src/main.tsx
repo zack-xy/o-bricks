@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router'
+import { BrowserRouter, createBrowserRouter, Navigate, redirect, Route, RouterProvider, Routes } from 'react-router-dom'
 import About from './About.tsx'
 import App from './App.tsx'
 import Home from './dashboard/Home.tsx'
@@ -10,6 +10,7 @@ import Loader from './dashboard/Loader.tsx'
 import Setting from './dashboard/Setting.tsx'
 import Team from './dashboard/Team.tsx'
 import File from './File.tsx'
+import GoodsHome from './goods/Home.tsx'
 
 import './index.css'
 
@@ -91,6 +92,26 @@ const router = createBrowserRouter([
           { path: 'loader/:name', Component: Loader, loader: async ({ params }) => {
             return { message: `hello ${params.name}` }
           } },
+        ],
+      },
+    ],
+  },
+  {
+    path: 'goods',
+    children: [
+      // { index: true, element: <Navigate to="list" replace /> },  // 重定向写法1
+      { index: true, loader: () => redirect('list') }, // 重定向写法2
+      {
+        Component: Layout,
+        children: [
+          {
+            index: true,
+            path: 'list',
+            lazy: async () => {
+              const { default: Component } = await import('./goods/List.tsx')
+              return { Component }
+            },
+          },
         ],
       },
     ],

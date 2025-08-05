@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 export default function LinkPage() {
   const navigate = useNavigate()
