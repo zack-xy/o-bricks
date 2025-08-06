@@ -12,6 +12,8 @@ import Setting from './dashboard/Setting.tsx'
 import Team from './dashboard/Team.tsx'
 import File from './File.tsx'
 
+import { action as editAction, loader as editLoader } from './goods/editMethods.ts'
+
 import './index.css'
 
 // Declarative mode
@@ -156,10 +158,10 @@ const router = createBrowserRouter([
             },
           },
           {
-            path: 'edit',
+            path: 'edit/:id',
             lazy: async () => {
-              const { default: Component } = await import('./goods/List.tsx')
-              return { Component }
+              const { default: Component } = await import('./goods/Edit.tsx')
+              return { Component, loader: editLoader, action: editAction }
             },
           },
         ],
