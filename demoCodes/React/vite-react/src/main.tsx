@@ -1,6 +1,7 @@
+import type { LoaderFunctionArgs } from 'react-router-dom'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, createBrowserRouter, Navigate, redirect, Route, RouterProvider, Routes } from 'react-router-dom'
+import { BrowserRouter, createBrowserRouter, Navigate, redirect, RouterProvider, Routes } from 'react-router-dom'
 import About from './About.tsx'
 import App from './App.tsx'
 import Home from './dashboard/Home.tsx'
@@ -10,7 +11,6 @@ import Loader from './dashboard/Loader.tsx'
 import Setting from './dashboard/Setting.tsx'
 import Team from './dashboard/Team.tsx'
 import File from './File.tsx'
-import GoodsHome from './goods/Home.tsx'
 
 import './index.css'
 
@@ -73,9 +73,53 @@ const router = createBrowserRouter([
       {
         path: 'teams/:teamId/p/:productId',
         Component: Team,
-        loader: async ({ params }) => {
+        /**
+         * 【loader干什么用的】
+         *
+         *  1、数据预加载
+         *    + 在路由匹配时自动触发异步数据请求，无需等待组件渲染完成，从而减少页面白屏时间
+         *    + 通过useLoaderData钩子直接获取预加载数据，避免组件内重复请求
+         *    + 支持并行加载多个路由loader，优化嵌套路由的数据获取效率
+         *
+         *   示例：
+         *   // 路由配置
+         *   {
+         *      path: "/user/:id",
+         *      loader: async ({ params }) => {
+         *        const res = await fetch(`/api/users/${params.id}`);
+         *        return res.json();  // 数据直接注入组件
+         *      },
+         *      element: <UserProfile />
+         *   }
+         *
+         *   组件内通过const userData = useLoaderData()直接使用数据
+         *
+         *
+         *  2、权限验证与路由守卫
+         *     + 在路由跳转前校验权限(如检查token)，未通过时重定向到登陆页
+         *     + 替代传统路由守卫逻辑，实现更简洁的权限控制流
+         *
+         *  示例
+         *
+         *    loader: () => {
+         *      if (!localStorage.getItem("token")) {
+         *         throw redirect("/login");  // 自动跳转
+         *      }
+         *      return null;
+         *    }
+         *
+         *
+         *  3、性能优化特性
+         *    + 减少瀑布流请求：提前加载所有依赖数据，避免组件层级请求的串行延迟
+         *    + SSR支持：与服务端渲染深度集成，提升首屏加载速度
+         *    + 数据共享：同一路由下的嵌套组件可复用loader数据，避免重复请求
+         *
+         */
+        loader: async ({ params, context }: LoaderFunctionArgs<number>) => {
           // eslint-disable-next-line no-console
           console.log('params>>>>', params)
+          // eslint-disable-next-line no-console
+          console.log('context>>>>', context)
           return { name: 'zack zheng' }
         },
       },
@@ -105,8 +149,14 @@ const router = createBrowserRouter([
         Component: Layout,
         children: [
           {
-            index: true,
             path: 'list',
+            lazy: async () => {
+              const { default: Component } = await import('./goods/List.tsx')
+              return { Component }
+            },
+          },
+          {
+            path: 'edit',
             lazy: async () => {
               const { default: Component } = await import('./goods/List.tsx')
               return { Component }
