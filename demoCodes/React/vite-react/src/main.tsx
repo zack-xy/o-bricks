@@ -135,9 +135,11 @@ const router = createBrowserRouter([
         Component: Layout,
         children: [
           { path: 'link', Component: Link },
-          { path: 'loader/:name', Component: Loader, loader: async ({ params }) => {
-            return { message: `hello ${params.name}` }
-          } },
+          {
+            path: 'loader/:name', Component: Loader, loader: async ({ params }) => {
+              return { message: `hello ${params.name}` }
+            }
+          },
         ],
       },
     ],
@@ -168,6 +170,24 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: 'form',
+    children: [
+      { index: true, loader: () => redirect('demo1') },
+      {
+        Component: Layout,
+        children: [
+          {
+            path: 'demo1',
+            lazy: async () => {
+              const { default: Component } = await import('./form/Demo1.tsx')
+              return { Component }
+            },
+          }
+        ]
+      }
+    ]
+  }
 ])
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
