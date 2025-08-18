@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form";
-import type { SubmitHandler } from "react-hook-form";
+import type { SubmitHandler } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 interface LoginFormInputs {
-  email: string,
+  email: string
   password: string
 }
 
@@ -12,7 +12,8 @@ export default function Demo1() {
 
   // 2.提交处理
   const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
-    console.log("表单数据", data)
+    // eslint-disable-next-line no-console
+    console.log('表单数据', data)
   }
 
   return (
@@ -20,18 +21,20 @@ export default function Demo1() {
       <div>
         <label htmlFor="email">Email:</label>
         <input
-          {...register("email", { required: "邮箱必填" })}
+          {...register('email', { required: '邮箱必填' })}
           id="email"
-          type="email" />
-        {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
+          type="email"
+        />
+        {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
       </div>
 
       <div>
         <label htmlFor="password">Password:</label>
         <input
-          {...register("password", { required: "密码必填" })}
+          {...register('password', { required: '密码必填' })}
           id="password"
-          type="password" />
+          type="password"
+        />
         {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
       </div>
 
