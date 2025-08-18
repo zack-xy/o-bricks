@@ -193,6 +193,13 @@ const router = createBrowserRouter([
               return { Component }
             },
           },
+          {
+            path: 'demo3',
+            lazy: async () => {
+              const { default: Component } = await import('./form/Demo3.tsx')
+              return { Component }
+            },
+          },
         ],
       },
     ],
