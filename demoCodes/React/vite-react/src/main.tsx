@@ -201,6 +201,13 @@ const router = createBrowserRouter([
             },
           },
           {
+            path: 'zod-demo',
+            lazy: async () => {
+              const { default: Component } = await import('./form/ZodDemo.tsx')
+              return { Component }
+            },
+          },
+          {
             path: 'dynamic-form',
             lazy: async () => {
               const { default: Component } = await import('./form/DynamicForm.tsx')
