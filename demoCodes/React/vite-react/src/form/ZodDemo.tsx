@@ -8,6 +8,7 @@ const Player = z.object({
   xp: z.number(),
 })
 
+// ##### 类型推断
 type MyPlayer = z.infer<typeof Player>
 
 let myPlayer: MyPlayer
@@ -52,6 +53,17 @@ async function test() {
 }
 
 test()
+
+// ##### 推断出入类型和输出类型
+// 这里用到.transform() API ，transform将“输入类型”转换为“输出类型”
+// 也就是把一种类型转换为另一种类型
+const mySchema = z.string().transform(val => val.length)
+
+// => string
+type MySchemaIn = z.input<typeof mySchema>
+
+// => number
+type MySchemaOut = z.output<typeof mySchema>
 
 export default async function ZodDemo() {
   return (
