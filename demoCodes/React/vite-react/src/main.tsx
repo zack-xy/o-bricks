@@ -200,6 +200,13 @@ const router = createBrowserRouter([
               return { Component }
             },
           },
+          {
+            path: 'dynamic-form',
+            lazy: async () => {
+              const { default: Component } = await import('./form/DynamicForm.tsx')
+              return { Component }
+            },
+          },
         ],
       },
     ],
