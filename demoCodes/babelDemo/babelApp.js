@@ -1,8 +1,9 @@
 import babel from '@babel/core'
 import presetEnv from '@babel/preset-env'
+import presetReact from "@babel/preset-react";
 import fs from 'node:fs'
 
-const code = fs.readFileSync('./test.js', 'utf-8')
+const code = fs.readFileSync('./app.jsx', 'utf-8')
 const res = babel.transform(code, {
   presets: [[presetEnv, {
     // 按需加载 polyfill
@@ -10,7 +11,7 @@ const res = babel.transform(code, {
     // 指定 core-js 版本
     corejs: 3,
     // 指定兼容性到哪个版本的浏览器
-  }]],
+  }], presetReact],
   plugins: []
 })
 
