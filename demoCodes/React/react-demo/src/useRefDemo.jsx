@@ -13,7 +13,7 @@ const Child = forwardRef((props, ref) => {
 
 const Parent = () => {
   const myRef = useRef()
-  
+
   const handleClick = () => {
     myRef.current.focus()
   }
@@ -51,7 +51,7 @@ const UseRefCom = () => {
   // 可以把ref暴露给父组件，让父组件可以操作子组件的DOM
 
   // 特性：useRef里也可以传值
-  // 用于存储一些和渲染无关的数据
+  // 用于存储一些和渲染无关的数据，持久化数据，如果下面isUpdate不通过useRef存储，每次组件更新都会重新初始化
   // const someValue = useRef(0)
 
   /**
