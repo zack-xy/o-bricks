@@ -11,7 +11,7 @@ interface Iuser {
 
 function App() {
 
-  const [user, setUser] = useState<Iuser[]>([])
+  const [user, setUser] = useState<Iuser>({} as Iuser)
   const [loading, setLoading] = useState(true)
   const [userId, setUserId] = useState('1')
 
