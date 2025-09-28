@@ -76,13 +76,14 @@ const UseEffectCom = () => {
    */
 
 
-  // 特性4: useEffect异步与useLayoutEffect同步
+  // 特性4: useEffect异步 / useLayoutEffect同步
   // useEffect()是在渲染被绘制到屏幕之后执行的，是异步的，不会卡住渲染
-  // useLayoutEffect()是在渲染之后但在屏幕更新之前，是同步的，可能会卡住渲染
+  // useLayoutEffect()是在渲染之后但在屏幕更新之前，是同步的，可能会卡住渲染（整个组件的渲染，也就是非state的部分也要等state渲染）
 
   // 当 count 状态更新时，useLayoutEffect 的回调函数会先执行，然后才会将更新后的 DOM 绘制到屏幕上，最后执行 useEffect 的回调函数。
 
   // 因为useLayoutEffect是在绘制之前执行的，所以页面不会闪烁
+  // 如果你在 useEffect 里立刻修改 DOM 样式/滚动，用户可能已经看到了“先画出的旧状态”，然后一闪再改成新状态 → 闪烁。
 
 
   // useEffect(() => {
@@ -107,7 +108,7 @@ const UseEffectCom = () => {
         resolve()
       }, 3000);
     }).then(() => {
-      setMsg('hi react') 
+      setMsg('hi react')
     })
   }, [])
 
@@ -115,7 +116,7 @@ const UseEffectCom = () => {
   return (
     <div>
       <button onClick={handleClick}>点击</button>
-      <div>useEffect页面，count的值是： { count }, name的值是: {name}</div>
+      <div>useEffect页面，count的值是： {count}, name的值是: {name}</div>
       <hr />
       <div>autoCount的值是: {autoCount}</div>
       <hr />
