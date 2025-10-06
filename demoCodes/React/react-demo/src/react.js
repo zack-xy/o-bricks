@@ -1,3 +1,24 @@
+/**
+ * 
+⚙️ 代码运行的完整流程图
+
+JSX
+ ↓
+createElement() → 虚拟DOM
+ ↓
+render() → Fiber Root
+ ↓
+requestIdleCallback → workLoop()
+ ↓
+performUnitOfWork() → reconcileChildren()
+ ↓
+commitRoot() → commitWork()
+ ↓
+DOM 更新
+
+
+ */
+
 function createElement(type, props, ...children) {
   return {
     type,
@@ -22,6 +43,7 @@ function createTextElement(text) {
   }
 }
 
+// 创建DOM
 function createDom(fiber) {
   const dom =
     fiber.type == "TEXT_ELEMENT"
@@ -39,6 +61,9 @@ const isProperty = key =>
 const isNew = (prev, next) => key =>
   prev[key] !== next[key]
 const isGone = (prev, next) => key => !(key in next)
+
+// 更新DOM
+// 把属性、事件绑定到 DOM
 function updateDom(dom, prevProps, nextProps) {
   //Remove old or changed event listeners
   Object.keys(prevProps)
@@ -96,6 +121,7 @@ function commitRoot() {
   wipRoot = null
 }
 
+// 真正修改DOM
 function commitWork(fiber) {
   if (!fiber) {
     return
@@ -124,6 +150,8 @@ function commitWork(fiber) {
   commitWork(fiber.sibling)
 }
 
+// 渲染，element是虚拟dom
+// contianer是要将这个虚拟dom渲染到的容器
 function render(element, container) {
   wipRoot = {
     dom: container,
@@ -136,6 +164,7 @@ function render(element, container) {
   nextUnitOfWork = wipRoot
 }
 
+// 下一个工作单元
 let nextUnitOfWork = null
 let currentRoot = null
 let wipRoot = null
@@ -157,6 +186,7 @@ function workLoop(deadline) {
   requestIdleCallback(workLoop)
 }
 
+// 在浏览器空闲的时候开始真正的渲染
 requestIdleCallback(workLoop)
 
 function performUnitOfWork(fiber) {
@@ -164,6 +194,7 @@ function performUnitOfWork(fiber) {
     fiber.dom = createDom(fiber)
   }
 
+  // 获取虚拟dom
   const elements = fiber.props.children
   reconcileChildren(fiber, elements)
 
@@ -179,6 +210,7 @@ function performUnitOfWork(fiber) {
   }
 }
 
+// Diff
 function reconcileChildren(wipFiber, elements) {
   let index = 0
   let oldFiber =
